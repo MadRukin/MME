@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+    
+        <meta name="viewport" content="width=device-width, initial scale=1">
+        <meta name="description" content="Pfandhelfer-Spende deinen Pfand!Plattform zum gemeinützigen Spenden von Pfandflaschen an soziale Einrichtungen in deiner Umgebung.">
+        <meta name="author" content="Florian Kruellke">
+        <meta charset="utf-8">
+
+        <title>Pfandhelfer - Spende deinen Pfand!</title>
+        
+        <!-- Bootstrap core CSS  -->
+        <link rel="stylesheet" href="CSS/bootstrap.min.css"/>
+        
+        <!-- Custom Styles for this Site -->  
+        <link rel="stylesheet" href="CSS/style.css" />
+
+        <!-- Scripts  -->
+        <script type="text/javascript" src="Scripts/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
+
+    </head>
+
+    <body>
+        
+<!-- NAVBAR 
+========================================= -->
+        <div class="navbar-wrapper">
+            
+            <div class="container">
+            
+                <div class="navbar navbar-default navbar-static-top" role="navigation">
+                    
+                    <div class="container">
+                       
+                        <div class="navbar-header">
+                            
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        
+                            <a class="navbar-brand" href="#welcome">Pfandhelfer.de</a>
+                            
+                        </div> <!-- End of Navbar-Header -->
+                        
+                        <div class="navbar-collapse collapse">
+                            
+                            <div class="right-inner-addon pull-right" >
+                                
+                                <button id="login" name="home" type="submit" class="form-control" data-toggle="modal" data-target="#myModal"/>Anmelden</button>
+                                
+                            </div> <!-- End of Anmelden -->
+                            
+                            <ul class="nav navbar-nav">
+                                <li><a href="#about">Wie funktioniert's?</a></li>
+                                <li><a href="#pfandspende">Pfand spenden</a></li>
+                                <li><a href="#contact">Kontakt</a></li>
+                                
+                            </ul>
+                        
+                        </div> <!-- End of Navbar-Collapse -->
+                        
+                    </div> <!-- End of Container -->
+                    
+                </div> <!-- End of Basic Navbar -->
+                
+            </div> <!-- End of Container -->
+            
+        </div> <!-- End of Navbar-Wrapper -->
+
+<!-- Class - Main Content
+========================================= -->
+
+        <div class="container main-content">
+  
+            <div id="welcome" class="row text-center page-header">
+
+                <div  class="col-sm-12" style="height: 100%;">
+
+                    <h1 class="main-header">Pfandhelfer</h1>
+                    <p>Spende deinen Pfand an eine soziale Einrichtung in deiner Nähe und helfe so den Leuten in deinem Kiez.</p> 
+                    
+                    <img id="logo" class="media-object" src="Assets/Images/Pfandhelfer-logo3.png" alt="...">
+
+                </div> <!-- End of Page Header -->
+
+                <div class="col-sm-12 text-center" >
+
+                    <div class="link-btn">
+                          <a href="#about" class="btn" style="background-color: #efefef;" role="button">Mehr Infos</a>
+                          <a href="#pfandspende" class="btn" style="background-color: #efefef;" role="button">Pfand spenden</a>
+                    </div>
+
+                </div> 
+
+            </div> <!-- End of Welcome-Row -->
+
+            <div class="row">   
+
+            </div> <!-- End of Border-Bttm-Row -->
+
+            <div  id="about" class="row">
+
+                <h2>Wie funktioniert's?</h2>
+                <div class="col-sm-12">
+                    <div class="container">
+                      <ul class="nav nav-tabs">
+                          <li  class="active" ><a data-toggle="tab" href="#schritt1">Schritt 1</a></li>
+                          <li><a data-toggle="tab" href="#schritt2">Schritt 2</a></li>
+                          <li><a data-toggle="tab" href="#schritt3">Schritt 3</a></li>
+                          <li><a data-toggle="tab" href="#schritt4">Schritt 4</a></li>
+                        </ul>
+
+                      <div class="row">
+
+                          <div class="tab-content">
+
+                            <div id="schritt1" class="col-sm-12 tab-pane fade in active">
+                              <h3>Schritt 1</h3>
+                              <p>Du klickst auf <i>"Pfand spenden"</i> und gelangst so zum Pfandformular.</p>
+                              <img class="media-object" src="Assets/Images/Pfandhelfer-schritt1.png" alt="..." style="width:25%;height:25%;">
+                            </div>
+
+                            <div id="schritt2" class="col-sm-12 tab-pane fade in">
+                              <h3>Schritt 2</h3>
+                              <p class="col-sm-7">Du gibst deinen Namen und deine Anschrift in die dafür vorgesehenen Felder ein und kannst dann die Pfandart sowie die Anzahl der Flaschen eingeben. Wenn du unterschiedliche Arten von Pfandflaschen spenden möchtest, klicke auf das "+"-Symbol.</p>
+                              <img class="media-object" src="Assets/Images/Pfandhelfer-schritt2.png" style="width:60%;height:60%;"alt="...">
+                            </div>
+
+                            <div id="schritt3" class="col-sm-12 tab-pane fade in">
+                              <h3>Schritt 3</h3>
+                              <p class="col-sm-9">Sobald deine Spende erfolgreich übermittelt wurde, erhälst du eine Bestätigungsmail. Eine soziale Einrichtung in deiner Nähe sammelt die Pfandspenden und holt spätestens nach einer Woche die Pfandflaschen ab.</p>
+                              <img class="media-object" src="Assets/Images/Pfandhelfer-schritt3.png" style="width:70%;height:70%;"alt="...">
+                            </div>
+
+                            <div id="schritt4" class="col-sm-12 tab-pane fade in">
+                              <h3>Schritt 4</h3>
+                              <p class="col-sm-7">Auf Wunsch erhälst du eine Spendenquittung, um diese bei deiner nächsten Steuererklärung mit anzugeben. Jegliche an uns übermittlete persönlichen Daten behandeln wir höchstvertraulich und geben diese nicht an Dritte weiter.</p>
+
+                              <img class="media-object" src="Assets/Images/Pfandhelfer-schritt4.png" style="width:55%;height:55%;"alt="...">
+                            </div>
+
+                          </div> <!-- End of Tab-Content -->
+
+                      </div> <!-- End of Row -->
+
+                    </div> <!-- End of Container -->
+
+                </div> <!-- End of Col-12 -->
+
+          </div> <!-- End of About-Row -->
+
+          <div class="row border-bttm">
+            <p></p>
+                
+            </div>
+
+          <div id="pfandspende" class="row">
+
+            <h2>Neue Pfandspende:</h2>
+
+         <div class="col-sm-12">
+
+        <div class="row">
+
+            <div class="col-sm-6 form person">
+
+                <p>Angaben zur Person</p>
+
+                  <form class="form-horizontal" role="form">
+
+                    <div class="form-group">
+                      <label class="control-label" for="email"></label>
+                      <div class="col-sm-12">
+                        <input type="email" class="form-control" id="email" placeholder="Email">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="control-label" for="vorname"></label>
+                      <div class="col-sm-12">          
+                        <input type="name" class="form-control" id="vorname" placeholder="Vornamen">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="control-label" for="nachname"></label>
+                      <div class="col-sm-12">          
+                        <input type="name" class="form-control" id="nachname" placeholder="Nachnamen">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="control-label" for="strasse"></label>
+                      <div class="col-sm-7">          
+                        <input type="text" class="form-control" id="strasse" placeholder="Strasse">
+                      </div>
+
+                      <label class="control-label" for="nummer"></label>
+                      <div class="col-sm-4">          
+                        <input type="text" class="form-control" id="nummer" placeholder="Hausummer">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="control-label" for="plz"></label>
+                      <div class="col-sm-5">          
+                        <input type="text" class="form-control" id="plz" placeholder="Postleitzahl">
+                      </div>
+                    </div>
+
+                  </form> 
+
+            </div> <!-- End of Form Person -->
+
+            <div class="col-sm-6" >
+
+                <p>Deine Pfandspende</p>
+
+                <div class="form form-pfand">
+
+                    <div class="input-group">
+
+                        <ul id="pfandliste">
+                          <li>
+                            <div class="btn-group dropup">
+                              <form>
+                                <button id="pfand1" type="button" class="btn btn-default">Art des Pfands</button>
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu" required>
+                                   <li class="dropdown-header" value="">Art des Pfands</li> 
+                                    <li class="pfand-auswahl" value="Bierflaschen 0.5l"><a>Bierflaschen 0.5l</a></li>
+                                    <li class="pfand-auswahl" value="Bierflaschen 0.5l"><a>Bierflaschen 0.33l</a></li>
+                                    <li class="pfand-auswahl" value="Bierflaschen 0.5l"><a>Mischgetränke 0.5l (Mate, Spezi etc.)</a></li>
+                                    <li class="pfand-auswahl" value="Bierflaschen 0.5l"><a>25 Cent Pfandpflaschen/Dosen</a></li>
+                                </ul>
+                                <input type="text" class="form-control pfandzahl" style="width: 90px;" placeholder="Anzahl" aria-describedby="...">
+                              </form>
+                            </div>
+                          </li>
+                        </ul>
+
+                        <div class="btn">
+                            <span id="plus-pfand" class="glyphicon glyphicon-plus" aria-hidden="true" style="font-size: 24px"></span>
+                        </div>
+
+                    </div><!-- End of input-group -->
+
+                </div><!-- End of form-pfand -->
+
+            </div><!-- End of col 6 -->
+       
+            <div class="col-sm-12" style="margin-left:20px;padding:20px;">
+              <button type="submit" class="btn btn-info">Pfand spenden</button>
+            </div>
+
+        </div><!-- End of row -->
+
+      </div> <!-- End of Col-Sm-12 -->
+
+      <div class="row border-bttm">
+        <p></p>
+            
+      </div>
+
+      </div> <!-- End of Pfandspende -->
+
+      <div id="contact" class="row">
+
+          <h2>Kontakt:</h2>
+
+          <div class="col-sm-12">
+
+              <div id="impress" class="col-sm-6">
+                  <h3>Impressum</h3>
+                    <p>Pfandhelfer.de<br>
+                    Florian Krüllke<br>
+                    Liebenwalder Str. 35<br>
+                    13347 Berlin<br>
+                    (alle Rechte vorbehalten)<br></p>
+              </div>
+
+              <div class="col-sm-6">
+                <h3>Sie sind als Einrichtung interessiert?</h3>
+                  <p>Alle weiteren Informationen finden sie hier:</p>
+                  <div style="margin-left:20px;">
+                      <button type="submit" name="registrieren" class="btn btn-default" data-toggle="modal" data-target="#myModal">soziale Einrichtungen</button>
+                  </div>   
+              </div>
+
+          </div> <!-- End of Col-Sm-12 -->
+
+      </div> <!-- End of Contact -->
+
+      <div class="row">
+        <p></p>          
+
+      </div>
+
+      </div> <!-- End of Main-Content -->
+
+      <footer class="footer">
+          <div class="container text-center">
+              <p>made by <a href="mailto:f.kruellke@beuth-hochschule.de?Subject=Hello" target="_top">Florian Krüllke</a> ©2015</p>
+          </div>
+      </footer>
+   
+    </body>
+
+</html>

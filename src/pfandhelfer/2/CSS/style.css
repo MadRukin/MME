@@ -1,0 +1,397 @@
+/*CSS Document
+  Styles für Pfandhelfer.de
+  @author Florian Krüllke */
+
+/*
+ Custom Styling to Navbar 
+-------------------------------- */
+.navbar-wrapper {
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 20;
+}
+
+.navbar-wrapper > .container {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.navbar-wrapper .navbar {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.navbar-wrapper .navbar .container {
+    width: auto;
+}
+
+.right-inner-addon {
+    position: relative;
+    top: 8px;
+    right: 1px;
+    height: 3px;
+}
+
+.right-inner-addon input {
+    padding-right: 30px;   
+}
+
+.right-inner-addon i {
+    position: absolute;
+    right: 0px;
+    padding: 10px 12px;
+    pointer-events: none;
+}
+
+/* Custom Styling to Welcome 
+-------------------------------- */
+
+.main-content{
+    margin-top: -45px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+p{
+    padding: 20px;
+}
+
+/* Custom Styling to Page Header
+-------------------------------- */
+
+.link-btn{
+        display: inline;
+}
+
+#impress p{
+    padding: 3px;
+}
+
+#logo{
+    width: 39%;
+    margin: 0 auto;
+    margin-top: -25px;
+    padding-bottom: 25px;
+}
+.border-bttm{
+    border-bottom: 1px solid #EEE;
+}
+
+.page-header > .jumbotron{
+    padding: 20px;
+}
+
+/* Custom Styling to About 
+-------------------------------- */
+
+#about img{
+    border:none;
+    margin: 0 auto;
+}
+
+#about{
+    height: 650px;
+}
+
+#about .row .nav-back{
+    background-color: #efefef;
+    position: relative;
+    margin: 0 auto;
+}
+
+.nav-tabs{
+
+    border:none;
+} 
+
+.modal-header{
+    padding: 10px;
+}
+
+.modal-body h3{
+    margin-top: 0px;
+}
+.modal-body .form-signin .form-control{
+    margin-top: 2px;
+}
+
+#myModal .nav-tabs{
+    border: none;
+}
+
+.nav-tabs > li.active > a:active,.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a,.nav-tabs > li.active > a:focus,
+.nav-tabs > li > a:hover{
+    background-color: #fff;
+    border-color: "";
+}
+
+#myModal .nav-tabs > li.active > a:active,#myModal .nav-tabs > li.active > a:hover,
+#myModal .nav-tabs > li.active > a,#myModal .nav-tabs > li.active > a:focus,
+#myModal .nav-tabs > li > a:hover{
+    background-color: #efefef;
+    border-color: "";
+    border-bottom: none;
+}
+
+.nav-tabs > li > a {
+    border-radius: 0px;
+    border-color: 1px solid #efefef;
+    border-radius: 4px;
+}
+
+.btn-default:hover{
+    background-color: #efefef;
+}
+
+.btn-default:focus{
+    background-color: #fff;
+    border-color: #66AFE9;
+    outline: 0px none;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(102, 175, 233, 0.6);
+}
+
+.about-skip{
+    position: absolute;
+    top: 50%;
+    z-index: 99;
+}
+
+/* Custom Styling to Pfandspende
+-------------------------------- */
+
+select {
+  height: 34px;
+  width: 179px;
+  border-radius: 4px;
+  display: inline-block;
+  font: inherit;
+  line-height: 1.5em;
+  padding: 0.5em 3.5em 0.5em 1em;
+  margin: 0;      
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+      
+select.minimal {
+  background-image:
+    linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - 2.5em) 0.5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+  background-repeat: no-repeat;
+  padding: 3px 9px;
+  margin-left: 2px; 
+  text-align: left;
+}
+
+select.minimal:hover{
+  background-color: #fff;
+}
+
+.pfand-auswahl{
+    cursor: pointer;
+}
+
+#pfandspende{
+    margin-top: 20px;
+}
+
+#pfandspende label{
+    display: none;
+}
+
+ul{
+    list-style: none;
+    padding: 0px;
+}
+.pfandzahl{
+    width: 90px;
+}
+
+.keine-zahl{
+    margin-top: 32px; 
+    margin-left: 15px; 
+    font-size: 12px;
+    position: absolute;
+}
+
+#pfandspende .input-falsch{
+    margin-top: 32px; 
+    margin-left: 15px; 
+    font-size: 12px; 
+    position: absolute;
+}
+
+/* Custom Styling to Anything else
+-------------------------------- */
+
+.luecke{
+    height: 41px; 
+    background-color: #efefef;
+}
+
+.user-error{
+    border: 2px solid rgba(255,0,0,0.7);
+}
+
+.popover.top{
+    margin-top: 7px;
+}
+
+.popover-title{
+    display: none;
+}
+
+.form-login .input-falsch{
+    margin-top: -1px; 
+    margin-left: 0px; 
+    font-size: 12px; 
+    position: absolute;
+}
+
+#sozlogin{
+    height: 55px;
+}
+
+.footer{
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    background-color: #F5F5F5;
+    font-size: 13px;
+}
+
+/* Responsive CSS MIN 768px
+-------------------------------- */
+@media (min-width: 768px) {
+
+    .main-header{
+        font-size: 50px;
+    }
+    
+    .navbar-wrapper {
+        width: 100%; 
+    }
+    
+    .navbar-wrapper .container {
+        width:100%;
+    }
+    
+    .navbar-wrapper .navbar {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    
+    .navbar-wrapper .navbar {
+       border-radius: 4px;    
+    }
+
+}
+
+/* Responsive CSS MAX 768px
+-------------------------------- */
+@media (max-width: 768px) {
+
+    .keine-zahl{
+        margin-top: 0px; 
+        margin-left: 15px; 
+        font-size: 12px;
+        position: absolute;
+    }
+
+    #pfandspende .input-falsch{
+        margin-top: -2px; 
+        margin-left: 15px; 
+        font-size: 12px; 
+        position: absolute;
+    }
+
+    #about{
+        height: 500px;
+    }
+
+    #about .nav-tabs a{
+        font-size: 13px;
+        padding: 5px 4px;
+    }
+
+    .luecke{
+        height: 30px; 
+        background-color: #efefef;
+    }
+
+    .pfandzahl{
+        width: 70px;
+    }
+
+    .btn-danger{
+        margin-left:0px;
+    }
+
+    h2{
+        font-size: 24px;
+    }
+    .small a{
+        font-size: 12px;
+    }
+    .nav-tabs{
+        width: 100%;
+    } 
+
+    .btn-lg{
+        font-size: 15px;
+    }
+    #logo{
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    .row{
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    #login{
+        position: relative;
+        margin-top: 123px;
+        z-index: 99;
+    }
+}
+
+/* Responsive CSS MAX 480px
+-------------------------------- */
+@media (max-width: 480px) {
+
+    #about{
+        height: 550px;
+    }
+    .link-btn{
+        display: block;
+        margin-top:25px;
+    }
+}
+
+/* Responsive CSS MAX 360px
+-------------------------------- */
+@media (max-width: 360px) {
+
+    #about{
+        height: 570px;
+    }
+}
