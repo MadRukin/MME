@@ -14,8 +14,15 @@
     </head>
     <style>
         .arrow{
+            width: 50px;
+            height: 50px;
             border: 10px solid #000000;
             border-left-color: transparent;
+        }
+        iframe{
+            border: none;
+            width: 500px;
+            height: 500px;
         }
     </style>
     <body>
@@ -27,6 +34,12 @@
         <!-- Add your site or application content here -->
         <p style="cursor: pointer; font-family: MSTrebuchet, sans-serif; font-weight: 180;">Klick mal auf mich!</p>
 
+<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=13.345212936401367%2C52.539327061870615%2C13.38083267211914%2C52.55746408645484&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="http://www.openstreetmap.org/#map=15/52.5484/13.3630">Größere Karte anzeigen</a></small>
+
+<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=13.358310163021086%2C52.55004544878396%2C13.360536396503448%2C52.551178955587744&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="http://www.openstreetmap.org/#map=19/52.55061/13.35942">Größere Karte anzeigen</a></small>
+
+
+
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
 
@@ -35,10 +48,27 @@
         	$(document).ready(function(){
 
         		$("p").on("click", function(event){
-        			alert("Ein Klick kommt selten allein! Source: \n" + event.target.innerHTML);
+        			//alert("Ein Klick kommt selten allein! Source: \n" + event.target.innerHTML);
+                    var e = document.createElement("div");
+                    var color = getRandomColor();
+                    e.style.borderColor = color;
+                    e.className = "arrow";
+                    $("body").append(e);
+
+                    color = getRandomColor();
+                    $(".arrow").animate({backgroundColor: "#AA0000", borderWidth: 15},{duration: 1500});
         		});
 
         	});
+
+            function getRandomColor() {
+                var letters = '0123456789ABCDEF'.split('');
+                var color = '#';
+                for (var i = 0; i < 6; i++ ) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
         </script>
     </body>
 </html>

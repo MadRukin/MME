@@ -59,6 +59,7 @@
                             <div class="right-inner-addon pull-right" >
                                 
                                 <button id="login" name="home" type="submit" class="btn btn-default" data-toggle="modal" data-target="#myModal"/>Anmelden</button>
+                                <button id="login" name="registrieren" type="submit" class="btn btn-default" data-toggle="modal" data-target="#myModal"/>Registrieren</button>
                                 
                             </div> <!-- End of Anmelden -->
                             
@@ -430,8 +431,27 @@
                       </div>
 
                       <div id="registrieren" class="tab-pane fade">
-                        <h3>Dieser Service ist noch im Aufbau!</h3>
-                        <p>...</p>
+
+                        <form action="form_response.php" method="post">
+                          <fieldset><legend>Bitte füllen Sie die Felder aus!</legend> Name:
+                            <input type="text" class="form-control" name="firstname" size="25" maxlength="30" required>
+                            Nachname:
+                            <input type="text" class="form-control" name="secondname" size="25" maxlength="30" required>
+                            Geburtsdatum:
+                            <input type="date" class="form-control" name="birthday">
+                            Email:
+                            <input type="email" class="form-control" name="email" placeholder="your email address">
+                            Telefon:
+                            <input type="tel" class="form-control" name="mobile">
+                            <!--
+                            Deine Lieblingsfarbe:
+                            <input type="color" class="form-control" style="height: 50px;" name="favoritecolor">
+                            -->
+                            <br></br>
+                            <button type="submit" class="btn btn-lg btn-primary btn-block" value="send">Registrieren</button>
+                          </fieldset>
+                        </form>
+
                       </div>
 
                       <div id="einrichtung" class="tab-pane fade">
