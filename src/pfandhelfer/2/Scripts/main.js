@@ -1,6 +1,6 @@
 /* Main.js
    Funktionalität für Pfandhelfer.de 
-   @author Florian Krüllke*/
+   @author Katharina Bolinski, Florian Krüllke*/
 
 //Sobald alle Inhalte geladen wurden, werden die Buttons
 //initialisiert und das Pfandformular neu aufgesetzt.
@@ -10,6 +10,7 @@ $(document).ready(function(){
 	$("#plus-pfand").on("click", plusPfand);
 	$('#reset').on("click", resetInputs);
 	$(".about-skip").on("click", aboutSkip);
+	$("#playTutorial").on("click", playTutorial);
 
 	$(".form-person").find(".form-control").on("focusout",checkInput);
 	$(".form-login").find(".form-control").on("focusout",checkInput);
@@ -215,6 +216,38 @@ function resetInputs(){
 	$("#pfandliste li span")[0].style.display = "none";
 }
 
+// Sorgt für das automatisierte Abspielen des Tutorials
+function playTutorial(event){
+
+	var e = $("#about").find("ul").find("li");
+	var activeLi;
+	for(var i = 0; i < e.length; i++){
+		if(e[i].className.indexOf("active") >= 0){
+			activeLi = i;
+		}
+	}
+	if(activeLi < 3){
+
+		window.setTimeout(function(){
+
+			$("#about ul").find('[class="active"]').removeClass("active");
+			$("#about .tab-content").find('[class*="active"]').removeClass("active").removeClass("in");
+
+			activeLi++;
+
+			$("#about ul a")[activeLi].parentNode.className = "active";
+			$("#about .tab-content div")[activeLi].className+=" active in";
+
+			playTutorial(event);
+
+		}, 50);
+	}
+	console.log(activeLi);
+	if(activeLi === 3){
+		$('#aniButton').click();
+	}
+}
+
 // Sorgt für das Blättern im Torutial -> #about
 function aboutSkip(event){
 
@@ -222,9 +255,6 @@ function aboutSkip(event){
 
 	if(num >= 1 && num <= 4){
 		if(event.currentTarget.id.indexOf("left") > -1 && num > 1) {
-
-			$("#about ul").find('[class="active"]').removeClass("active");
-			$("#about .tab-content").find('[class*="active"]').removeClass("active").removeClass("in");
 
 			num = num-2;
 
