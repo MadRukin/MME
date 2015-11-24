@@ -240,11 +240,13 @@ function playTutorial(event){
 
 			playTutorial(event);
 
-		}, 50);
+		}, 3500);
 	}
 	console.log(activeLi);
 	if(activeLi === 3){
-		$('#aniButton').click();
+		window.setTimeout(function(){
+			$('#aniButton').click();
+		},3500);
 	}
 }
 

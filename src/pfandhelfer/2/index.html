@@ -20,10 +20,13 @@
         <!-- CSS-Styles -->
         <link rel="stylesheet" href="CSS/bootstrap.min.css"/>
         <link rel="stylesheet" href="CSS/style.css" />
+        <link rel="stylesheet" href="CSS/leaflet.css" />
         <link href="data:text/css;charset=utf-8," data-href="../dist/css/bootstrap-theme.min.css" rel="stylesheet" id="bs-theme-stylesheet">
 
         <!-- Scripts -->
         <script type="text/javascript" src="Scripts/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="Scripts/leaflet.js"></script>
+
         <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
         <script type="text/javascript" src="Scripts/main.js"></script>
 
@@ -59,7 +62,7 @@
                             <div class="right-inner-addon pull-right" >
                                 
                                 <button id="login" name="home" type="submit" class="btn btn-default" data-toggle="modal" data-target="#myModal"/>Anmelden</button>
-                                <button id="login" name="registrieren" type="submit" class="btn btn-default" data-toggle="modal" data-target="#myModal"/>Registrieren</button>
+                                <button id="signup" name="registrieren" type="submit" class="btn btn-default" data-toggle="modal" data-target="#myModal"/>Registrieren</button>
                                 
                             </div> <!-- End of Anmelden -->
                             
@@ -135,8 +138,9 @@
                 <h2>Wie funktioniert's?
                     <div class="link-btn">
                         <a id="playTutorial" class="btn-lg btn-info" role="button">Abspielen</a>
-                    </div>
+
                     <div class="small pull-right"><a href="#">nach oben</a>
+                    </div>
                     </div>
                 </h2>
                 <div class="col-sm-12">
@@ -145,7 +149,7 @@
                         <button id="about-left" class="about-skip btn btn-default" style="left:0%;"><span class="glyphicon glyphicon-chevron-left"></span></button>
                         <button id="about-right" class="about-skip btn btn-default" style="right:0%;"><span class="glyphicon glyphicon-chevron-right"></span></button>
 
-                    <div class="row text-center">
+                    <div class="row text-center" style="margin-top: 15px;">
 
                       <div class="col-sm-12 nav-back" style="">
 
@@ -318,13 +322,28 @@
 
                 </div><!-- End of Row -->
 
+                <div> <!-- Map --> 
+              
+                  <div id="map" style="width: 502px; height: 295px;margin-top: 10px;" class="container"></div>
+                  <script type="text/javascript">
+                     var map = new L.Map('map');
+                
+                     var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                       osmAttrib = 'Map data &copy; 2011 OpenStreetMap contributors',
+                        osm = new L.TileLayer(osmUrl, {maxZoom: 18, attribution: osmAttrib});
+                
+                     map.setView(new L.LatLng(52.54400, 13.35300), 16).addLayer(osm);
+                  </script>
+                
+                </div> <!-- End of Map -->
+
               </div> <!-- End of Jumbotron-Pfandform -->
 
           </div><!-- End of Pfandspende-Row -->
 
           <div class="row border-bttm">
 
-            </div>
+          </div>
 
           <!-- End of Pfandspende -->
 
@@ -510,7 +529,7 @@
 
                 <div class="col-sm-12">
                   
-                  <p>Vielen Dank, für ihr Interesse an dem Projekt Pfandhelfer. Jede Spende hilft!</p>
+                  <p>Vielen Dank, für ihr Interesse an Pfandhelfer. Jede Spende hilft!</p>
                   <div class="col-sm-12">
                     <div class="link-btn center-block">
                             <a href="#pfandspende" class="btn-lg btn-info" role="button" data-dismiss="modal">Pfand spenden</a>
