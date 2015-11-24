@@ -315,21 +315,24 @@
                   
 
                 </div><!-- End of Row -->
+                
+           <!-- Map --> 
+           <p>
+            <div id="map" style="width: 502px; height: 295px"></div>
+   				 <script type="text/javascript">
+       			 var map = new L.Map('map');
+        
+       			 var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+           		 osmAttrib = 'Map data &copy; 2011 OpenStreetMap contributors',
+            		osm = new L.TileLayer(osmUrl, {maxZoom: 18, attribution: osmAttrib});
+        
+       			 map.setView(new L.LatLng(52.54400, 13.35300), 16).addLayer(osm);
+    			</script>
+    		<!-- End of Map -->
 
               </div> <!-- End of Jumbotron-Pfandform -->
               
-                <!-- Map --> 
-            <div id="map" style="width: 502px; height: 295px"></div>
-    <script type="text/javascript">
-        var map = new L.Map('map');
-        
-        var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-            osmAttrib = 'Map data &copy; 2011 OpenStreetMap contributors',
-            osm = new L.TileLayer(osmUrl, {maxZoom: 18, attribution: osmAttrib});
-        
-        map.setView(new L.LatLng(52.54400, 13.35300), 16).addLayer(osm);
-    </script>
-    <!-- End of Map -->
+                
 
           </div><!-- End of Pfandspende-Row -->
 
