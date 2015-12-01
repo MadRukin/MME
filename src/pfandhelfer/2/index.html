@@ -4,7 +4,7 @@
     <head> 
     
         <!-- Meta-Informationen -->
-        <meta name="viewport" content="width=device-width, height=device-height, initial scale=1.0">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
         <meta name="name" content="Pfandhelfer.de">
         <meta name="description" content="Pfandhelfer-Spende deinen Pfand! Plattform zum gemeinützigen Spenden von Pfandflaschen an soziale Einrichtungen in deiner Umgebung.">
         <meta name="author" content="Florian Kruellke">
@@ -60,8 +60,8 @@
                             
                             <div class="right-inner-addon pull-right" >
                                 
-                                <button id="login" name="home" type="submit" class="btn btn-default" data-toggle="modal" data-target="#myModal"/>Anmelden</button>
-                                <button id="login" name="registrieren" type="submit" class="btn btn-default" data-toggle="modal" data-target="#myModal"/>Registrieren</button>
+                                <button name="home" type="submit" class="btn btn-default login" data-toggle="modal" data-target="#myModal"/>Anmelden</button>
+                                <button name="registrieren" type="submit" class="btn btn-default login" data-toggle="modal" data-target="#myModal"/>Registrieren</button>
                                 
                             </div> <!-- End of Anmelden -->
                             
@@ -138,8 +138,20 @@
                     <div class="link-btn">
                         <a id="playTutorial" class="btn-lg btn-info" role="button">Abspielen</a>
                     </div>
+
+                   <!-- <div class="link-btn">
+                        <a id="stopTutorial" onclick="stopTut(event);" class="btn-lg btn-info" role="button">Stop</a>
+                    </div> -->
+
                     <div class="small pull-right"><a href="#">nach oben</a>
                     </div>
+
+                    <div class="progress" style="
+    margin-top: 20px;">
+                        <div id="pro" style="width: 0%; height: 30px; background-color: #46B8DA">
+                        </div>
+                    </div>
+
                 </h2>
                 <div class="col-sm-12">
 
@@ -164,28 +176,28 @@
 
                           <div class="tab-content">
 
-                            <div id="schritt1" class="col-sm-12 tab-pane fade in active">
+                            <div id="schritt1" class="col-sm-12 tab-pane fade in active" style="height: 530px">
                               <h3>Schritt 1</h3>
                               <p class="col-sm-offset-2 col-sm-8">Es stapeln sich die Pfandflaschen und du hast keine Zeit sie wegzubringen? Dann spende doch einfach deinen Pfand, klicke auf <i>"Pfand spenden"</i> und gelange so zum Pfandformular.</p>
                               <img class="media-object img-responsive" src="Assets/Images/Pfandhelfer-schritt1.png" alt="..." style="width:25%;">
                               <p class="col-sm-offset-2 col-sm-8"><i>(Jegliche an uns übermittelte Daten behandeln wir vertraulich und geben keine Informationen an Dritte weiter.)</i></p>
                             </div>
 
-                            <div id="schritt2" class="col-sm-12 tab-pane fade in">
+                            <div id="schritt2" class="col-sm-12 tab-pane fade in" style="height: 530px">
                               <h3>Schritt 2</h3>
                               <p class="col-sm-offset-2 col-sm-8">Du gibst deinen Namen und deine Anschrift in die dafür vorgesehenen Felder ein und kannst dann die Pfandart sowie die Anzahl der Flaschen eingeben.</p>
                               <img class="media-object img-responsive" src="Assets/Images/Pfandhelfer-schritt2.png" style="width:60%;"alt="...">
                               <p class="col-sm-offset-2 col-sm-8">Wenn du unterschiedliche Arten von Pfandflaschen spenden möchtest, klicke auf das "+"-Symbol. Ein angehängtes Foto hilft uns sehr, unsere Arbeitsabläufe zu optimieren.</p>
                             </div>
 
-                            <div id="schritt3" class="col-sm-12 tab-pane fade in">
+                            <div id="schritt3" class="col-sm-12 tab-pane fade in" style="height: 530px">
                               <h3>Schritt 3</h3>
                               <p class="col-sm-offset-2 col-sm-8">Sobald deine Spende erfolgreich übermittelt wurde, erhälst du eine Bestätigungsmail. Eine soziale Einrichtung in deiner Nähe sammelt die Pfandspenden und holt die Pfandflaschen ab.</p>
                               <img class="media-object img-responsive" src="Assets/Images/Pfandhelfer-schritt3.png" style="width:65%;"alt="...">
                               <p class="col-sm-offset-2 col-sm-8"><i>(Für auftretetende Verzögerungen und Probleme jeglicher Art kann es sehr praktisch sein, die Telefonnummer mit anzugeben.)</i></p>
                             </div>
 
-                            <div id="schritt4" class="col-sm-12 tab-pane fade in">
+                            <div id="schritt4" class="col-sm-12 tab-pane fade in" style="height: 530px">
                               <h3>Schritt 4</h3>
                               <p class="col-sm-offset-2 col-sm-8">Auf Wunsch erhälst du selbstverständlich eine Spendenquittung.</p>
                               <img class="media-object img-responsive" src="Assets/Images/Pfandhelfer-schritt4.png" style="width:55%;"alt="...">
@@ -318,14 +330,37 @@
                     <a id="reset" title="Achtung! Löscht alle Inhalte der Eingabefelder!" class="btn btn-default" href="#pfandspende">Zurücksetzen</a>
 
                   </div>
+
+                  <div class="col-sm-12" style="margin-top: 30px">
+
+                      <a onclick="showMap()" class="" style="margin-top: 0px; margin-left: 0px; cursor: pointer;">Karte zeigen/verbergen</a>
+
+                  </div>
                   
 
                 </div><!-- End of Row -->
                 
            <!-- Map --> 
            <p>
-            <div id="map" style="width: 502px; height: 295px"></div>
+
+            <div id="map-frame" class="panel panel-default" style="margin-top: -50px; display: ;">
+
+                <div class="container" style="padding: 20px 20px">
+
+                    <div class="col-sm-3" style="padding-bottom:20px;">
+
+                        <button class="btn btn-info" onclick="locateUser(event);">Meine Position</button>
+
+                    </div>
+
+                    <div id="map" style="width: 100%; height: 450px;" class="col-sm-9"></div>
+
+                </div>
+
+            </div>
+
    				 <script type="text/javascript">
+
        			 var map = new L.Map('map');
         
        			 var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
@@ -333,7 +368,31 @@
             		osm = new L.TileLayer(osmUrl, {maxZoom: 18, attribution: osmAttrib});
         
        			 map.setView(new L.LatLng(52.54400, 13.35300), 16).addLayer(osm);
+
+       			 //latitude: 52.5517544
+                 //longitude: 13.3580867
+
+       			 function locateUser(event){
+       			    if (navigator.geolocation) {
+                        navigator.geolocation.getCurrentPosition(showPosition);
+                    } else {
+                        alert("Geolocation is not supported by this browser.");
+                    }
+       			 }
+
+       			 function showPosition(position){
+       			    map.setView(new L.LatLng(position.coords.latitude, position.coords.longitude), 16).addLayer(osm);
+       			    L.marker([position.coords.latitude, position.coords.longitude]).addTo(map)
+                    .bindPopup('<strong>Ist das deine aktuelle Position?</strong><br>'
+                        + '<a href="#pfandspende"><button class="btn-xs btn-info">Ja</button></a>'
+                        + '<a  href="#"><button class="btn-xs btn-danger">Nein</button></a></div>')
+                    .openPopup();
+       			 }
+
     			</script>
+
+
+
     		<!-- End of Map -->
 
               </div> <!-- End of Jumbotron-Pfandform -->
@@ -474,7 +533,7 @@
                             Deine Lieblingsfarbe:
                             <input type="color" class="form-control" style="height: 50px;" name="favoritecolor">
                             -->
-                            <br></br>
+                            <br> <!-- holder --></br>
                             <button type="submit" class="btn btn-lg btn-primary btn-block" value="send">Registrieren</button>
                           </fieldset>
                         </form>
@@ -534,10 +593,10 @@
                   <p>Vielen Dank, für ihr Interesse an dem Projekt Pfandhelfer. Jede Spende hilft!</p>
                   <div class="col-sm-12">
                     <div class="link-btn center-block">
-                            <a href="#pfandspende" class="btn-lg btn-info" role="button" data-dismiss="modal">Pfand spenden</a>
+                            <a href="#pfandspende" onclick="hreffer(event)" class="btn-lg btn-info" role="button" data-dismiss="modal">Pfand spenden</a>
                     </div>
                     <div class="link-btn center-block">
-                            <a href="#about" class="btn-lg btn-info" role="button" data-dismiss="modal">Mehr Infos</a>
+                            <a href="#contact" onclick="hreffer(event)" class="btn-lg btn-info" role="button" data-dismiss="modal">Kontakt</a>
                     </div>
                   </div>
                 </div>

@@ -20,6 +20,15 @@ $(document).ready(function(){
 	//Versteckt ersten Pfandauswahl-Entfernen-Button
 	$("#pfandliste li span")[0].style.display = "none";
 });
+var barAni;
+function stopTut(event){
+	$("#bar").stop();
+	clearTimeout(barAni);
+}
+
+function hreffer(event){
+	window.location = event.target.href;
+}
 
 // Initialisiert das Pfandspende-Formular mit Eventlistenern
 function initPfandspende(){
@@ -218,7 +227,7 @@ function resetInputs(){
 
 // Sorgt für das automatisierte Abspielen des Tutorials
 function playTutorial(event){
-
+	//$(".progress-bar").css("margin-top", "0%");
 	var e = $("#about").find("ul").find("li");
 	var activeLi;
 	for(var i = 0; i < e.length; i++){
@@ -226,29 +235,47 @@ function playTutorial(event){
 			activeLi = i;
 		}
 	}
+
+	var bar = 25*(activeLi+1);
+	bar = bar + "%";
+	$("#pro").animate({width: bar},{duration: 2500});
+
 	if(activeLi < 3){
+    		window.setTimeout(function(){
 
-		window.setTimeout(function(){
+    			$("#about ul").find('[class="active"]').removeClass("active");
+    			$("#about .tab-content").find('[class*="active"]').removeClass("active").removeClass("in");
 
-			$("#about ul").find('[class="active"]').removeClass("active");
-			$("#about .tab-content").find('[class*="active"]').removeClass("active").removeClass("in");
+    			activeLi++;
 
-			activeLi++;
+    			$("#about ul a")[activeLi].parentNode.className = "active";
+    			$("#about .tab-content div")[activeLi].className+=" active in";
+    			//$(".progress-bar").css("margin-top", "0%");
+    			playTutorial(event);
 
-			$("#about ul a")[activeLi].parentNode.className = "active";
-			$("#about .tab-content div")[activeLi].className+=" active in";
+    		}, 2500);
+    	}
+    	if(activeLi === 3){
 
-			playTutorial(event);
+    		barAni = window.setTimeout(function(){
+    			$("#about ul").find('[class="active"]').removeClass("active");
+                $("#about .tab-content").find('[class*="active"]').removeClass("active").removeClass("in");
 
-		}, 50);
-	}
-	console.log(activeLi);
-	if(activeLi === 3){
-		$('#aniButton').click();
-	}
+    			$("#about ul a")[0].parentNode.className = "active";
+    			$("#about .tab-content div")[0].className+=" active in";
+
+    			$("#pro").animate({width: "0%"},{duration: 2500});
+    			$('#aniButton').click();
+    		}, 2500);
+    	}
 }
 
-// Sorgt für das Blättern im Torutial -> #about
+// Klappt die Karte auf und zu
+function showMap(){
+	$("#map-frame").toggle();
+}
+
+// Sorgt für das Blättern im Tutorial -> #about
 function aboutSkip(event){
 
 	var num = parseInt($("#about ul").find('[class="active"]').find("a")[0].innerHTML.replace("Schritt ", ""));
@@ -257,6 +284,10 @@ function aboutSkip(event){
 		if(event.currentTarget.id.indexOf("left") > -1 && num > 1) {
 
 			num = num-2;
+
+
+			$("#about ul").find('[class="active"]').removeClass("active");
+			$("#about .tab-content").find('[class*="active"]').removeClass("active").removeClass("in");
 
 			$("#about ul a")[num].parentNode.className = "active";
 			$("#about .tab-content div")[num].className+=" active in";

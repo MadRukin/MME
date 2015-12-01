@@ -323,7 +323,7 @@ ul{
     }
 
     #about{
-        height: 500px;
+        height: 550px;
     }
 
     #about .nav-tabs a{
@@ -379,7 +379,7 @@ ul{
 @media (max-width: 480px) {
 
     #about{
-        height: 550px;
+        height:600px;
     }
     .link-btn{
         display: block;
