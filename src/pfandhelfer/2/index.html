@@ -21,11 +21,13 @@
         <link rel="stylesheet" href="CSS/bootstrap.min.css"/>
         <link rel="stylesheet" href="CSS/style.css" />
         <link href="data:text/css;charset=utf-8," data-href="../dist/css/bootstrap-theme.min.css" rel="stylesheet" id="bs-theme-stylesheet">
+        <link rel="stylesheet" href="CSS/leaflet.css" />
 
         <!-- Scripts -->
         <script type="text/javascript" src="Scripts/jquery-1.11.3.min.js"></script>
         <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
         <script type="text/javascript" src="Scripts/main.js"></script>
+        <script src="Scripts/leaflet.js"></script>
 
     </head>
 
@@ -307,6 +309,7 @@
                         <button type="submit" class="btn btn-danger">Ich möchte meinen Pfand spenden!</button>
 
                       </div><!-- End of Col-12 -->
+                     
 
                   </form> <!-- End of Form -->
 
@@ -315,16 +318,34 @@
                     <a id="reset" title="Achtung! Löscht alle Inhalte der Eingabefelder!" class="btn btn-default" href="#pfandspende">Zurücksetzen</a>
 
                   </div>
+                  
 
                 </div><!-- End of Row -->
+                
+           <!-- Map --> 
+           <p>
+            <div id="map" style="width: 502px; height: 295px"></div>
+   				 <script type="text/javascript">
+       			 var map = new L.Map('map');
+        
+       			 var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+           		 osmAttrib = 'Map data &copy; 2011 OpenStreetMap contributors',
+            		osm = new L.TileLayer(osmUrl, {maxZoom: 18, attribution: osmAttrib});
+        
+       			 map.setView(new L.LatLng(52.54400, 13.35300), 16).addLayer(osm);
+    			</script>
+    		<!-- End of Map -->
 
               </div> <!-- End of Jumbotron-Pfandform -->
+              
+                
 
           </div><!-- End of Pfandspende-Row -->
 
           <div class="row border-bttm">
 
             </div>
+            
 
           <!-- End of Pfandspende -->
 
@@ -412,7 +433,7 @@
                           <div class="form-group">
                             <div class="">
                               <label for="loginEmail" class="sr-only">Email-Adresse</label>
-                              <input id="loginEmail" name="email" class="form-control" type="email" placeholder="Email" autofocus="" data-placement="top" data-toggle="popover" title="Email" data-content="Gib eine richtige Email-Adresse ein!" required>
+                              <input id="loginEmail" name="email" class="form-control" type="email" placeholder="Email" autofocus data-placement="top" data-toggle="popover" title="Email" data-content="Gib eine richtige Email-Adresse ein!" required>
                             </div>
                           </div>
 
