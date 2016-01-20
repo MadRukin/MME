@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost:3306/";
 $username = "root";
-$password = "12345";
+$password = "";
 $dbname = "pfandDB";
 
 // Create connection
@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 } 
 
 $sql = "INSERT INTO User (firstname, lastname, email)
-VALUES ('John', 'Doe', 'john@example.com')";
+VALUES ('FLO', 'KK', 'FLOKK@example.com')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
