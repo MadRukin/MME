@@ -22,10 +22,10 @@ print("<tr><td bgcolor=\"#bbbbbb\"> <strong>$key</strong></td>
 ?>
 
 <?php
-/*$servername = "localhost";
-$username = "username";
-$password = "password";
-$dbname = "myDB";
+$servername = "localhost:3306/";
+$username = "root";
+$password = "";
+$dbname = "pfandDB";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -34,8 +34,10 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "INSERT INTO MyGuests (firstname, lastname, email)
-VALUES ('John', 'Doe', 'john@example.com')";
+$sql = "INSERT INTO User (email, vorname, nachname, telefon, strasse, hausnummer, nummerzusatz, plz)
+VALUES ('{$_POST["email"]}', '{$_POST["vorname"]}', '{$_POST["nachname"]}', '{$_POST["telefon"]}', '{$_POST["strasse"]}', {$_POST["hausnummer"]}, ' ', {$_POST["plz"]})";
+//VALUES ( 'floriankruellke@gmx.de', 'Florian', 'Krüllke', '0123-1234', 'Weg', 3, 'b', 12345)";
+//VALUES ('" . $_POST[0] . "', '" . $_POST[1] . "', '" . $_POST[2] . "', '" . $_POST[3] . "', '" . $_POST[4] . "', '" . $_POST[5] . "', ' ', '" . $_POST[6] . "')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
@@ -43,7 +45,7 @@ if ($conn->query($sql) === TRUE) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
-$conn->close();*/
+$conn->close();
 ?>
 </table> </output>
 </body> </html>

@@ -1,3 +1,9 @@
+<style>
+field{
+    width: 90px;
+    padding: 3px 3px;
+}
+</style>
 <?php
 $servername = "localhost:3306/";
 $username = "root";
@@ -11,14 +17,22 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "INSERT INTO User (firstname, lastname, email)
-VALUES ('FLO', 'KK', 'FLOKK@example.com')";
+$sql = "SELECT email, strasse, hausnummer, plz FROM User";
+$result = $conn->query($sql);
 
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+if ($result->num_rows > 0) {
+    // output data of each row
+    $num = 1;
+    while($row = $result->fetch_assoc()) {
+        echo "<label>".$num++. ".</label>
+        <field name='email'>" . $row["email"]."</field>
+        <field name='strasse'>" . $row["strasse"]."</field>
+        <field name='hausnummer'>" . $row["hausnummer"]."</field>
+        <field name='plz'>" . $row["plz"]."</field>
+        <br>";
+    }
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    echo "0 results";
 }
-
 $conn->close();
 ?>
