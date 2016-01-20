@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Admin - Pfandhelfer</title>
+
+    <!-- CSS-Styles -->
+    <link rel="stylesheet" href="CSS/bootstrap.min.css"/>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link href="data:text/css;charset=utf-8," data-href="../dist/css/bootstrap-theme.min.css" rel="stylesheet" id="bs-theme-stylesheet">
+    <link rel="stylesheet" href="CSS/leaflet.css" />
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="Scripts/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="Scripts/leaflet.js"></script>
+</head>
+<style>
+    iframe{
+        border: 1px solid black;
+        width: 370px;
+        height: 200px;
+        z-index: 100;
+    }
+</style>
+<body>
+<div class=container">
+    <div class="col-sm-12">
+        <div class="container col-sm-5"><iframe src="db-test.php" frameborder="0"></iframe></div>
+        <div id="map" style="width: 100%; height: 450px;" class="col-sm-7"></div>
+    </div>
+</div>
+
+
+
+</body>
+<script>
+var map = new L.Map('map');
+  var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+  osmAttrib = 'Map data &copy; 2011 OpenStreetMap contributors',
+  osm = new L.TileLayer(osmUrl, {maxZoom: 18, attribution: osmAttrib});
+
+  map.setView(new L.LatLng(52.55050, 13.35900), 16).addLayer(osm);
+</script>
+</html>

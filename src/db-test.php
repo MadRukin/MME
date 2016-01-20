@@ -24,12 +24,13 @@ if ($result->num_rows > 0) {
     // output data of each row
     $num = 1;
     while($row = $result->fetch_assoc()) {
-        echo "<label>".$num++. ".</label>
+        echo "<div class='pfandspende'>
+        <label>".$num++. ".</label>
         <field name='email'>" . $row["email"]."</field>
         <field name='strasse'>" . $row["strasse"]."</field>
         <field name='hausnummer'>" . $row["hausnummer"]."</field>
         <field name='plz'>" . $row["plz"]."</field>
-        <br>";
+        </div>";
     }
 } else {
     echo "0 results";
