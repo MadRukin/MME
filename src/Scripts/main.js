@@ -151,6 +151,10 @@ function checkInput(event){
 		text = 'Keine gültige Strasse. (min. 2 Zeichen)';
 		bool = checkName(event.currentTarget.value.trim());
 
+	} else if(event.currentTarget.id.indexOf("nummerzusatz") > -1) {
+		text = 'Keine gültiger Nummerzusatz. (min. 2 Zeichen)';
+		bool = checkZusatz(event.currentTarget.value.trim());
+
 	} else if(event.currentTarget.id.indexOf("hausnummer") > -1) {
 		text = 'Keine gültige Hausnummer.';
 		bool = checkHaus(event.currentTarget.value.trim());
@@ -232,6 +236,12 @@ function checkTelefon(tel) {
 // CheckInputs - > checkPWD: Überprüft den Namen
 function checkName(name){
 	var re = /\b([äöüÄÖÜßa-zA-Z]+){2,}\b/g;
+	return re.test(name);
+}
+
+// CheckInputs - > checkPWD: Überprüft den Namen
+function checkZusatz(name){
+	var re = /\b([äöüÄÖÜßa-zA-Z]+){1,}\b/g;
 	return re.test(name);
 }
 
