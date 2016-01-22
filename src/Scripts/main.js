@@ -358,6 +358,63 @@ function checkPopover(event){
 	}
 }
 
+//DB Connect Dialog
+function waitForDB(){
+	$("#aniModalContent").hide();
+	var e = document.createElement("div");
+	e.id = "aniHold";
+	e.innerHTML = ' <h5 class="modal-title">Ihre Eingaben werden verarbeitet...</h5>'
+				 +'<div class="progress">'
+                 +' <div class="progress-bar progress-bar-striped active" role="progressbar"'
+                 +'   aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">'
+                 +'   </div>'
+                 +' </div>';
+	$(e).insertBefore("#aniModalContent");
+	$("#aniButton").click();
+	setCloseEvent();
+}
+
+// close on click behavior #aniModal
+function setCloseEvent(){
+
+	$("#aniModalClose").on("click", function(event){
+		window.setTimeout(function(){
+
+			$("#aniHold").remove();
+			$("#aniModalContent").show();
+
+			window.location = "index.html";
+
+		}, 1000);
+	});
+
+}
+
+//DB Success Dialog
+function successDB(){
+	$("#aniModalContent").show();
+	$("#aniHold").remove();
+	var e = document.createElement("div");
+	e.id = "aniHold";
+	e.innerHTML = ' <h5 class="modal-title">Ihre Eingaben wurden verarbeitet und eine Bestätigungsmail an die angegebene Email-Adresse gesendet.</h5>'
+                 +' </div>';
+	$(e).insertBefore("#aniModalContent");
+	setCloseEvent();
+}
+
+//DB Error Dialog
+function errorDB(text){
+	$("#aniHold").remove();
+	$("#aniModalContent").hide();
+	var e = document.createElement("div");
+	e.id = "aniHold";
+	e.innerHTML = ' <h5 class="modal-title">Es gab Probleme bei der Verarbeitung ihrer Daten</h5>'
+				 +'<p>' + text + '</p>'
+                 +' </div>';
+	$(e).insertBefore("#aniModalContent");
+	setCloseEvent();
+}
+
 // Öffnet den Login-Modal-Dialog
 function openLogin(event){
 	$('#myModal li a').each(function(){

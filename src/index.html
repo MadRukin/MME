@@ -11,10 +11,10 @@
         <meta charset="utf-8">
 
         <!-- Icons
-        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"> -->
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <link rel="icon" type="image/x-icon" href="/favicon.ico">
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">  -->
+        <link rel="shortcut icon" href="apple-touch-icon.png" />
+        <link rel="icon" type="image/x-icon" href="apple-touch-icon.png">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
         
         <title>Pfandhelfer - Spende deinen Pfand!</title>
 
@@ -240,7 +240,7 @@
               <div class="row">
 
 
-                <form class="form-horizontal" role="form" action="form_response.php" method="post">
+                <form class="form-horizontal" role="form" action="pfandspende.php" method="post">
 
                   <div class="col-sm-6 form-person">
 
@@ -406,9 +406,9 @@ var map = new L.Map('map');
                   <div id="impress" class="row col-sm-6">
                       <h3>Impressum</h3>
                         <p>Pfandhelfer.de</p>
-                        <p>Florian Krüllke <a href="mailto:f.kruellke@beuth-hochschule.de?Subject=Pfandhelfer-Info" target="_top"><span class="glyphicon glyphicon-send"></span></a></p>
-                        <p>Liebenwalder Str. 35</p>
-                        <p>13347 Berlin</p>
+                        <p>Beuth Hochschule (FBVI - MME1) <a href="mailto:f.kruellke@beuth-hochschule.de?Subject=Pfandhelfer-Info" target="_top"><span class="glyphicon glyphicon-send"></span></a></p>
+                        <p>Luxemburger Str. 3</p>
+                        <p>13353 Berlin</p>
                         <p>(alle Rechte vorbehalten)</p>
                   </div><!-- End of Col-6 -->
 
@@ -441,7 +441,7 @@ var map = new L.Map('map');
 
           <div class="container text-center">
 
-              <p>made by <a href="mailto:f.kruellke@beuth-hochschule.de?Subject=Pfandhelfer-Info" target="_top"><span class="glyphicon glyphicon-send"></span> Katharina Bolinski & Florian Krüllke</a> ©2015</p>
+              <p>made by <a href="mailto:pfandhelfer@gmail.com?Subject=Pfandhelfer-Info" target="_top"><span class="glyphicon glyphicon-send"></span> Katharina Bolinski & Florian Krüllke</a> ©2015</p>
 
           </div>
 
@@ -576,8 +576,8 @@ var map = new L.Map('map');
               </div>
               <div class="modal-body container">
 
-                <div class="col-sm-12">
-                  
+                <div class="col-sm-6">
+                  <div id="aniModalContent">
                   <p>Vielen Dank, für ihr Interesse an dem Projekt Pfandhelfer. Jede Spende hilft!</p>
                   <div class="col-sm-12">
                     <div class="link-btn center-block">
@@ -588,10 +588,10 @@ var map = new L.Map('map');
                     </div>
                   </div>
                 </div>
-                
+                </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id="aniModalClose" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               </div>
             </div>
 
