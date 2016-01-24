@@ -15,10 +15,12 @@ $(document).ready(function(){
 	$(".form-person").find(".form-control").on("focusout",checkInput);
 	$(".form-login").find(".form-control").on("focusout",checkInput);
 
-	plusPfand();
+	if($("#pfandliste").length > 0){
+		plusPfand();
+		//Versteckt ersten Pfandauswahl-Entfernen-Button
+		$("#pfandliste li span")[0].style.display = "none";
+	}
 
-	//Versteckt ersten Pfandauswahl-Entfernen-Button
-	$("#pfandliste li span")[0].style.display = "none";
 
 	//makeMap();
 });
@@ -417,15 +419,16 @@ function errorDB(text){
 
 // Öffnet den Login-Modal-Dialog
 function openLogin(event){
+	var e = event.currentTarget.name;
 	$('#myModal li a').each(function(){
-		if(this.href.indexOf(event.currentTarget.name) > -1) {
+		if(this.href.indexOf(e) > -1) {
 			this.parentNode.className = "active";
 		} else {
 			this.parentNode.setAttribute('class', '' );
 		}
 	});
 	$('#myModal .tab-pane').each(function(){
-		if(this.id.indexOf(event.currentTarget.name) > -1) {
+		if(this.id.indexOf(e) > -1) {
 			this.className = "tab-pane fade active in";
 		} else {
 			this.className = "tab-pane fade";
