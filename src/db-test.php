@@ -8,6 +8,14 @@
     <!-- Scripts -->
     <script type="text/javascript" src="Scripts/jquery-1.11.3.min.js"></script>
 
+    <script>
+        $(document).ready(function(){
+            $(".pfandspende").on("click", function(event){
+                parent.addressFromClick(event.currentTarget);
+            });
+        });
+    </script>
+
     <style>
         .pfandspende{
             cursor: pointer;
@@ -51,11 +59,32 @@ if($dbloaded == true){
 
     } else {
 
+    echo '<table class="table table-condensed table-hover">
+                                                <thead>
+                                                <tr>
+                                                  <th>Nr.</th>
+                                                  <th>Email</th>
+                                                  <th>Strasse</th>
+                                                  <th>Haus</th>
+                                                  <th>PLZ</th>
+                                                </tr>
+                                              </thead>
+                                              <tbody>';
+    echo "<tr class='pfandspende'>
+                <td>1.</td>
+                <td name='email'>info@de</td>
+                <td name='strasse'>Späthstrasse</td>
+                <td name='hausnummer'>31</td>
+                <td name='plz'>12359</td>
+                </tr></table>";
+
+
+/*
         echo '<div class="jumbotron">
                 Keine Daten in der Datenbank! Kontaktieren sie den Pfandhelfer IT - Support<br>
                 <a href="mailto:pfandhelfer@gmail.com?Subject=IT-DB-Problem" target="_top"><span class="glyphicon glyphicon-send"></span> Jetzt schreiben!</a>
                 </div>';
-
+*/
     }
 
     $conn->close();
@@ -66,6 +95,7 @@ if($dbloaded == true){
                   Keine Datenbankverbindung möglich! Kontaktieren sie den Pfandhelfer Support<br>
                   <a href="mailto:pfandhelfer@gmail.com?Subject=Pfandhelfer Support" target="_top"><span class="glyphicon glyphicon-send"></span> Jetzt schreiben!</a>
                   </div>';
+
 }
 
 ?>

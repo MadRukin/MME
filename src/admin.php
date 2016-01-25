@@ -16,11 +16,14 @@
     <link rel="stylesheet" href="CSS/style.css" />
     <link href="data:text/css;charset=utf-8," data-href="../dist/css/bootstrap-theme.min.css" rel="stylesheet" id="bs-theme-stylesheet">
     <link rel="stylesheet" href="CSS/leaflet.css" />
+    <link rel="stylesheet" href="CSS/Control.OSMGeocoder.css" />
 
     <!-- Scripts -->
     <script type="text/javascript" src="Scripts/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="Scripts/leaflet.js"></script>
+    <script type="text/javascript" src="Scripts/Control.OSMGeocoder.js"></script>
+
 
     <script type="text/javascript" src="Scripts/main.js"></script>
 </head>
@@ -133,7 +136,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $inputvalid == true ) {
                     echo '
                                         <div class="container col-sm-12">
                                             <div class="container col-sm-5"">
-                                                <div class=""><iframe src="db-test.php" frameborder="0"></iframe></div>
+                                                <div class=""><iframe id="data-db" src="db-test.php" frameborder="0"></iframe></div>
 
                                             </div>
                                             <div class="col-sm-7">
@@ -142,7 +145,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $inputvalid == true ) {
                                         </div>
                                         </body>
                                       <script>';
-                    echo "
+                    echo "/*
                                       var map = new L.Map('map');
                                         var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
                                         osmAttrib = 'Map data &copy; 2011 OpenStreetMap contributors',
@@ -150,6 +153,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $inputvalid == true ) {
 
                                         map.setView(new L.LatLng(52.55050, 13.35900), 16).addLayer(osm);
 
+var cloudmadeAttribution = 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade',
+    cloudmade = new L.TileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png', {attribution: cloudmadeAttribution});
+
+var map = new L.Map('map').addLayer(cloudmade).setView(new L.LatLng(48.5, 2.5), 15);*/
+
+var map = new L.Map('map');
+                                        var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                                        osmAttrib = 'Map data &copy; 2011 OpenStreetMap contributors',
+                                        osm = new L.TileLayer(osmUrl, {maxZoom: 18, attribution: osmAttrib});
+
+                                        map.setView(new L.LatLng(52.55050, 13.35900), 16).addLayer(osm);
+var osmGeocoder = new L.Control.OSMGeocoder();
+
+map.addControl(osmGeocoder);
                                         $(document).ready(function(){
                                             $('.logout').toggle();
                                         });

@@ -113,7 +113,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $inputvalid == true ) {
                 $mail->set("charset", "utf-8");
 
                 $mail->addAddress("{$post["email"]}", "info@pfandhelfer");
-                $mail->setFrom("{$post["email"]}", "info@pfandhelfer");
+                $mail->setFrom("{$post["email"]}", "pfandhelfer");
 
                 $mail->addReplyTo('pfandhelfer@gmail.com', 'Information #'.$hash);
                 //$mail->addCC('cc@example.com');

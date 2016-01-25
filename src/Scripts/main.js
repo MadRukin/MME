@@ -21,9 +21,25 @@ $(document).ready(function(){
 		$("#pfandliste li span")[0].style.display = "none";
 	}
 
-
 	//makeMap();
 });
+
+// Verbindet iFrame #data-db und parent admin.php
+function addressFromClick(element){
+	//console.log(element);
+	var text = "";/*
+	$(element).find("[name]").each(function(){
+		console.log(this.getAttribute("name") + ": " + this.innerHTML + "\n");
+		if(this.getAttribute("name") === "plz") text += this.innerHTML + ", ";
+		if(this.getAttribute("name") === "strasse") text += this.innerHTML + " ";
+		if(this.getAttribute("name") === "hausnummer") text += this.innerHTML;
+	});*/
+	text += $(element).find("[name]")[3].innerHTML;
+	text += ", " + $(element).find("[name]")[1].innerHTML;
+	text += " " + $(element).find("[name]")[2].innerHTML;
+	lookFor(text);
+}
+
 var barAni;
 function stopTut(event){
 	$("#bar").stop();
@@ -45,7 +61,13 @@ var map = new L.Map('map');
   map.setView(new L.LatLng(52.55050, 13.35900), 16).addLayer(osm);
 }
 
-	                  var map, osm;
+	  var map, osm;
+function lookFor(text){
+	var e = $("#map").find('[type*="text"]');
+	e[0].value = text;
+	$("#map").find('[type*="submit"]').click();
+	//console.log(e);
+ }
 //latitude: 52.5517544
 //longitude: 13.3580867
 

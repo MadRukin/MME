@@ -94,7 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $inputvalid == true ) {
             $mail->set("charset", "utf-8");
 
             $mail->addAddress($mailTo, "info@pfandhelfer");
-            $mail->setFrom($mailTo, "info@pfandhelfer");
+            $mail->setFrom($mailTo, "pfandhelfer");
 
             //$mail->addReplyTo('info@example.com', 'Information');
             //$mail->addCC('cc@example.com');
